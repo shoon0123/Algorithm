@@ -1,16 +1,15 @@
 #include <iostream>
 #include <string>
-#include <set>
+#include <unordered_set>
 
 int main()
 {
 	std::ios::sync_with_stdio(false);
 	std::cin.tie(NULL);
-	std::cout.tie(NULL);
-
+	
 	int N, M;
 	std::cin >> N >> M;
-	std::set<std::string> set;
+	std::unordered_set<std::string> set;
 	while (N--)
 	{
 		std::string str;
