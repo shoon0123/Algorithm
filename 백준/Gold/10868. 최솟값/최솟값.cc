@@ -26,7 +26,7 @@ int main()
 	}
 	int size = int(pow(2, height));
 	int startIndex = size / 2;
-	tree.resize(size + 1, INT_MAX);
+	tree.resize(size, INT_MAX);
 
 	for (int i = 0; i < N; ++i)
 	{
