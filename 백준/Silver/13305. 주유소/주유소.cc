@@ -21,8 +21,8 @@ int main()
 	{
 		std::cin >> prices[i];
 	}
-	int curPrice = 1000000000;
-	int sum = 0;
+	long long curPrice = 1000000000;
+	long long sum = 0;
 	for (int i = 0; i < N - 1; ++i)
 	{
 		if (curPrice > prices[i])
