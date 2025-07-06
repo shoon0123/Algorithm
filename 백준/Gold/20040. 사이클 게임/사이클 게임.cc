@@ -43,7 +43,7 @@ int main()
             if (isSameUnion(dot1, dot2))
             {
                 endRound = i;
-                continue;
+                break;
             }
             else
             {
