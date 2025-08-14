@@ -1,5 +1,5 @@
 #include <iostream>
-#include <set>
+#include <unordered_set>
 
 int main()
 {
@@ -9,7 +9,7 @@ int main()
     int T, N, M;
     std::cin >> T;
 
-    std::set<int> intSet;
+    std::unordered_set<int> intSet;
     while (T--)
     {
         std::cin >> N;
