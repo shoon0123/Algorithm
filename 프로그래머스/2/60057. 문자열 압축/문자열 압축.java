@@ -1,34 +1,41 @@
-
 class Solution {
     public int solution(String s) {
-        int min = s.length();
-        int len = s.length()/2+1;
-        for(int i = 1; i < len; i++) {
-            String before = "";
-            int sum = 0;
-            int cnt = 1;
-            for(int j = 0; j < s.length();) {               
-                int start = j;
-                j = (j+i > s.length()) ? s.length():j+i;
-                String temp = s.substring(start, j);
-                if(temp.equals(before)) {
-                    cnt++;
-                } else {
-                    if(cnt != 1) {
-                        sum += (int)Math.log10(cnt)+1;
+        int min = Integer.MAX_VALUE;
+        
+        if(s.length() == 1){
+            return 1;
+        }
+        
+        for(int i = 1; i <= s.length() / 2; i++){
+            StringBuilder sb = new StringBuilder();
+            int count = 1;
+            int j = 0;
+            for(; j <= s.length() - 2 * i; j += i){
+                if(s.substring(j, j + i).equals(s.substring(j + i, j + 2 * i))){
+                    count++;
+                }else{
+                    if(count != 1){
+                        sb.append(Integer.toString(count));
                     }
-                    cnt = 1;
-                    sum+=before.length();
-                    before = temp;
+                    sb.append(s.substring(j, j + i));
+                    count = 1;
                 }
             }
-            sum+=before.length();
-            if(cnt != 1) {
-                sum += (int)Math.log10(cnt)+1;
+            
+            if(count != 1){
+                sb.append(Integer.toString(count));
             }
-            min = (min > sum) ? sum : min;
+            sb.append(s.substring(j, j + i));
+            
+            for(int k = j + i; k < s.length(); k++){
+                sb.append(s.charAt(k));
+            }
+            
+            if(min > sb.length()){
+                min = sb.length();
+            }
         }
-
+        
         return min;
     }
 }
