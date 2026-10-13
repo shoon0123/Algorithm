@@ -8,7 +8,9 @@ class Solution {
         String[] strings = new String[numbers.length];
         for(int i = 0; i < strings.length; i++){
             strings[i] = Integer.toString(numbers[i]);
-            if(numbers[i]==0)count++;
+            if(numbers[i] == 0) {
+                count++;
+            }
         }
         
         if(count == numbers.length) return "0";
